@@ -1,0 +1,54 @@
+[
+    {
+        "projectTitle": "Project Manager",
+        "projectDescription": "This project is my attempt at making a simple version of Trello and then using it to help the creation and development of my other projects.",
+        "projectType": "Front End",
+        "technologies": [
+            "React",
+            "HTML 5",
+            "CSS3"
+        ]
+    },
+    {
+        "projectTitle": "Workout Tracker",
+        "projectDescription": "Tracks a users progress in weightlifting and nutrition. Giving feedback and analytics to the user to suggest how they can improve their workouts and track their progress",
+        "projectType": "Full Stack",
+        "technologies": [
+            "React",
+            "Django",
+            "HTML 5",
+            "CSS3"
+        ]
+    },
+    {
+        "projectTitle": "Game Webscraper",
+        "projectDescription": "Goes to popular sites like op.gg and u.gg to gather data from the username given and provide statistics.",
+        "projectType": "Data Science",
+        "technologies": [
+            "Python",
+            "Pandas",
+            "Others"
+        ]
+    },
+    {
+        "projectTitle": "Article Creator",
+        "projectDescription": "This project is my attempt at making a simple version of Trello and then using it to help the creation and development of my other projects.",
+        "projectType": "Front End",
+        "technologies": [
+            "React",
+            "HTML 5",
+            "CSS3"
+        ]
+    },
+    {
+        "projectTitle": "Student Tool",
+        "projectDescription": "A webtool that students can use to study different fields of science or engineering. This webtool includes reading sections for the student to study and questions to help soldify concepts.",
+        "projectType": "Full Stack",
+        "technologies": [
+            "React",
+            "Node",
+            "HTML 5",
+            "CSS3"
+        ]
+    }
+]
