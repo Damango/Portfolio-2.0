@@ -4,6 +4,7 @@
 	background-color: white;
 	width: 100vw;
 	height: 800px;
+	margin-top: 50px;
 }
 
 .selector-buttons-container {
@@ -50,7 +51,7 @@
 
 .projects-list-wrapper {
 	position: relative;
-	border-top: 1px solid rgba(0, 0, 0, 0.171);
+	border-top: 1px solid rgba(0, 0, 0, 0.055);
 }
 
 .select-line-selected {

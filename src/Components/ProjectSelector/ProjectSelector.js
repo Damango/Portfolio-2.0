@@ -16,8 +16,6 @@ const ProjectSelector = (props) => {
     })
 
 
-
-
     const [projects, setProjects] = useState(ProjectData)
 
     const [counter, setCounter] = useState(0)
@@ -140,9 +138,6 @@ const ProjectSelector = (props) => {
 
         <div className="selector-buttons-container">
 
-
-
-
             <div className={"selector-button-" + buttonState.all} onClick={() => { changeProjects('all') }}>
                 <div className={"select-line-" + buttonState.all}></div>
                 All
@@ -156,8 +151,7 @@ const ProjectSelector = (props) => {
             <div className={"select-line-" + buttonState.fullStack}></div>
             Full Stack</div>
             <div className={"selector-button-" + buttonState.dataScience} onClick={() => { changeProjects('data-science') }}>
-                
-                
+            
             <div className={"select-line-" + buttonState.dataScience}></div>
                 Data Science</div>
         </div>
