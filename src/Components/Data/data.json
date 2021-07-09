@@ -15,7 +15,18 @@
         "projectType": "Full Stack",
         "technologies": [
             "React",
-            "Django",
+            "Node",
+            "HTML 5",
+            "CSS3"
+        ]
+    },
+    {
+        "projectTitle": "UI Library",
+        "projectDescription": "A React UI Library that has all kinds of prebuilt components. Full documentation is included with each component.",
+        "projectType": "Front End",
+        "technologies": [
+            "React",
+            "Node",
             "HTML 5",
             "CSS3"
         ]
@@ -30,23 +41,13 @@
             "Others"
         ]
     },
+   
     {
         "projectTitle": "Article Creator",
         "projectDescription": "This project is my attempt at making a simple version of Trello and then using it to help the creation and development of my other projects.",
         "projectType": "Front End",
         "technologies": [
             "React",
-            "HTML 5",
-            "CSS3"
-        ]
-    },
-    {
-        "projectTitle": "Student Tool",
-        "projectDescription": "A webtool that students can use to study different fields of science or engineering. This webtool includes reading sections for the student to study and questions to help soldify concepts.",
-        "projectType": "Full Stack",
-        "technologies": [
-            "React",
-            "Node",
             "HTML 5",
             "CSS3"
         ]
