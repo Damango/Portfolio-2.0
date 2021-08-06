@@ -4,110 +4,75 @@ import React, {useEffect, useRef}from 'react';
 const Canvas = (props) => {
 
   
-  const canvasRef = useRef(null)
-
   let mousePositionX = 0;
   let mousePositionY = 0;
+  let sizeOfSquare = 30;
+
+  const canvasRef = useRef(null)
+
+
 
  
 
 
-  class Ball{
-    constructor(radius, xPosition, yPosition,xVelocity, yVelocity){
-        this.radius = radius;
+  class Square{
+    constructor(xPosition, yPosition){
+     
         this.xPosition = xPosition;
         this.yPosition = yPosition;
-        this.xVelocity = xVelocity
-        this.yVelocity = yVelocity
+        this.color = '#e74c3c'
+      
     }
 
     draw(ctx){
         
         ctx.beginPath()
-        ctx.arc(this.xPosition,this.yPosition, this.radius, 0, Math.PI * 2);
+        ctx.rect(this.xPosition,this.yPosition, sizeOfSquare, sizeOfSquare);
        
         ctx.fill()
+        ctx.fillStyle = this.color
      
     }
 
+    onHover(ctx){
 
-
-    move(ctx){
-
-        if((this.xPosition + this.radius) >= window.innerWidth ||this.xPosition - this.radius <= 0 ){
-            this.xVelocity = -this.xVelocity
+        if(this.xPosition === Math.floor(mousePositionX) && this.yPosition === Math.floor(mousePositionY)){
+          this.color = 'red'
         }
-
-        if(this.yPosition + this.radius >= window.innerHeight || this.yPosition - this.radius <= 0 ){
-            this.yVelocity = -this.yVelocity 
-        }
-
-      /*  if(this.xPosition  === mousePositionX + 10  || this.xPosition === mousePositionX){
-          console.log(this.xPosition + '' + mousePositionX)
-          this.xVelocity = 10
-        }*/
-       
-        this.xPosition += this.xVelocity;
-        this.yPosition += this.yVelocity;
-        ctx.fillStyle = 'rgb(' + Math.abs((this.xVelocity * 30) + (this.yVelocity * 30)) + ', 76, 60)'
-        //ctx.fillStyle = '#e74c3c'
-        this.draw(ctx)
-       
     }
 
-    follow(ctx){
-      if(this.xPosition < mousePositionX){
-        if(this.xPosition - mousePositionX)
-        this.xVelocity -= 0.01
-     
-        console.log(mousePositionX)
-      }
 
-      else if( this.xPosition > mousePositionX){
-        this.xVelocity += 0.01;
-        
-      }
-
-      if(this.yPosition < mousePositionY){
-        this.yVelocity -= 0.01
-        
-        console.log(mousePositionY)
-      }
-
-      else if( this.yPosition > mousePositionY){
-        this.yVelocity += 0.01;
-      
-      }
 
     
 
-    
-      this.move(ctx)
-      this.draw(ctx)
-   
-    }
-
-
-    onCursor(ctx){
-      this.xPosition = mousePositionX - 10
-      this.yPosition = mousePositionY - 10
-    }
 
     
 }
 
-let circleArray = []
-let followBall = new Ball(20,100, 100, 1, 1)
-for(let i =0; i < 100; i++){
+let grid = []
 
-    let randomX = Math.random() * window.innerWidth;
-    let randomY = Math.random()* window.innerHeight;
-    let randomVelocity = Math.random() * 0.5
 
-    circleArray.push(new Ball(10, randomX, randomY, randomVelocity, randomVelocity))
+let i = 0;
+let j = 0;
+
+
+let windowWidth = window.innerWidth;
+let windowHeight = window.innerHeight;
+
+
+for(i = 0; i < windowWidth / sizeOfSquare; i++){
+  grid.push([])
+  for(j = 0; j < (windowHeight /2) / sizeOfSquare; j++){
+    grid[i].push(new Square(i * (sizeOfSquare + 1), j * (sizeOfSquare + 1)))
+  
+  }
+
+    
     
   
 }
+
+console.log(grid)
 
 const draw = (ctx, frameCount) => {
    ctx.fillStyle = 'white';
@@ -116,13 +81,15 @@ const draw = (ctx, frameCount) => {
  // ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height)
  
   ctx.beginPath()
-  for(let i = 0; i < circleArray.length; i++){
+  for(let i = 0; i < grid.length; i++){
+   for(let j = 0; j < grid[i].length; j++){
+    grid[i][j].draw(ctx)
+    grid[i][j].onHover(ctx)
+    console.log('Drawing Square')
+     
+   }
+     
    
-      circleArray[i].draw(ctx)
-      circleArray[i].follow(ctx)
-     // circleArray[i].move(ctx)
-    followBall.draw(ctx)
-    followBall.onCursor(ctx)
   
 
   }
@@ -162,7 +129,7 @@ const draw = (ctx, frameCount) => {
     
         return false
       }
-    
+  
       resizeCanvas(canvas)
     
     return () => {
@@ -179,7 +146,7 @@ const draw = (ctx, frameCount) => {
   
 
 
-    return ( <canvas onMouseMove={(e) => {mousePositionX = e.clientX; mousePositionY = e.clientY;}} ref={canvasRef}/> );
+    return ( <canvas onMouseMove={(e) => {mousePositionX = e.clientX; mousePositionY = e.clientY; console.log({x: mousePositionX, y:mousePositionY})}} ref={canvasRef}/> );
 }
  
 export default Canvas;

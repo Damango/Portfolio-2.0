@@ -32,9 +32,9 @@
         ]
     },
     {
-        "projectTitle": "Game Webscraper",
-        "projectDescription": "Goes to popular sites like op.gg and u.gg to gather data from the username given and provide statistics.",
-        "projectType": "Data Science",
+        "projectTitle": "PC Builder",
+        "projectDescription": "Similar to PC Part Picker but with a more modern front end design.",
+        "projectType": "Front End",
         "technologies": [
             "Python",
             "Pandas",
@@ -50,6 +50,16 @@
             "React",
             "HTML 5",
             "CSS3"
+        ]
+    },
+    {
+        "projectTitle": "Game Details",
+        "projectDescription": "A collection of games with details of type of game and other information such as player count, E-Sports, Latest News, and Reviews.",
+        "projectType": "Front End",
+        "technologies": [
+            "Python",
+            "Pandas",
+            "Others"
         ]
     }
 ]

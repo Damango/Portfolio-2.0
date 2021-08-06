@@ -30,8 +30,8 @@ const Project = (props) => {
 
 
 
-    return ( <animated.div style={projectAnimation} className="project-container">
-        <div className="project-card-image"></div>
+    return ( <animated.div style={projectAnimation} className="project-container" onClick={() =>{window.open(props.data.link)}}>
+        <div className="project-card-image" style={{backgroundImage:`url(${props.data.image})` }}></div>
         <div className="project-card-info-container">
 
            {renderProjectType()}

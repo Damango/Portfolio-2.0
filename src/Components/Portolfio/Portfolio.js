@@ -17,8 +17,7 @@ const Portfolio = (props) => {
 
     return (<div className="portfolio-container">
         <div className="jumbotron-container">
-            
-            <Canvas />
+      
             
         </div>
 
