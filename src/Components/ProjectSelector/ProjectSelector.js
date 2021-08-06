@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import "./ProjectSelector.css"
 import Project from "../Project/Project"
-import ProjectData from "../Data/data.json"
-import ProjectData2 from "../Data/data"
+
+import ProjectData from "../Data/data"
 import { render } from '@testing-library/react';
 const ProjectSelector = (props) => {
 
@@ -17,7 +17,7 @@ const ProjectSelector = (props) => {
     })
 
 
-    const [projects, setProjects] = useState(ProjectData2)
+    const [projects, setProjects] = useState(ProjectData)
 
     const [counter, setCounter] = useState(0)
 
